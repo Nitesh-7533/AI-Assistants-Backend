@@ -20,6 +20,12 @@ app.use(express.json());
 app.use(cookieParser());
 
 const port = process.env.PORT || 5000;
+
+// Check karne ke liye ki backend live hai
+app.get("/", (req, res) => {
+  res.send("API is running...");
+});
+
 app.use("/api/auth", authRouter);
 app.use("/api/user", userRouter);
 
